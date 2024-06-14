@@ -12,9 +12,13 @@
 	}
   Output - [{ category: 'Food', totalSpent: 10 }] // Can have multiple categories, only one example is mentioned here
 */
-
+//basically i need to traverse the array and group different tansactions together and total their price
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  let res={};
+  for(let t of transactions){
+         res[t.category]=(res[t.category] || 0)+t.price;
+  }
+  return res;
 }
 
 module.exports = calculateTotalSpentByCategory;
